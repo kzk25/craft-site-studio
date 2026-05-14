@@ -3,969 +3,371 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>craft_site_studio | Webサイト制作 | 横浜・神奈川・全国対応</title>
-  <meta name="description" content="横浜・神奈川を拠点に、飲食・美容・建設・士業など業種問わずWebサイト制作を行うWebクリエイター。CS専攻卒・ITエンジニアの技術力で、見た目も機能も優れたサイトを丁寧に制作します。無料デモ制作あり。">
-  <meta property="og:title" content="craft_site_studio | Webサイト制作 | 横浜・神奈川・全国対応">
-  <meta property="og:description" content="業種・地域を問わずWebサイト制作。無料デモ制作あり。CS卒エンジニアが丁寧に対応します。">
+  <title>竹之下地蔵尊 大雄山宝鏡寺｜静岡県小山町・曹洞宗</title>
+  <meta name="description" content="大雄山宝鏡寺は富士山・金時山の麓、静岡県小山町竹之下に位置する曹洞宗の寺院です。延命地蔵菩薩（県指定文化財）を御本尊に、坐禅会・御祈祷・御供養を承っております。">
+  <meta property="og:site_name" content="大雄山宝鏡寺">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://craft-site-studio.pages.dev/">
-  <meta property="og:image" content="https://craft-site-studio.pages.dev/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:title" content="竹之下地蔵尊 大雄山宝鏡寺｜静岡県小山町・曹洞宗">
+  <meta property="og:description" content="大雄山宝鏡寺は富士山・金時山の麓、静岡県小山町竹之下に位置する曹洞宗の寺院です。延命地蔵菩薩（県指定文化財）を御本尊に、坐禅会・御祈祷・御供養を承っております。">
+  <meta property="og:image" content="/assets/images/ogp.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:locale:alternate" content="en_US">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --navy:   #1e3a5f;
-      --blue:   #2563eb;
-      --orange: #ea6c1e;
-      --bg:     #ffffff;
-      --bg2:    #f7f9fc;
-      --bg3:    #eef2f7;
-      --text:   #1a202c;
-      --text2:  #64748b;
-      --border: #e2e8f0;
-      --radius: 12px;
-    }
-
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    /* ── Utilities ──────────────────────────── */
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 5vw; }
-    .section-tag {
-      display: inline-block;
-      background: rgba(37,99,235,.1);
-      color: var(--blue);
-      font-size: .72rem;
-      font-weight: 600;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      padding: .3rem .85rem;
-      border-radius: 100px;
-      margin-bottom: 1rem;
-    }
-    .section-title {
-      font-size: clamp(1.7rem, 3.5vw, 2.5rem);
-      font-weight: 700;
-      line-height: 1.3;
-      color: var(--navy);
-      margin-bottom: .8rem;
-    }
-    .section-sub {
-      font-size: .95rem;
-      color: var(--text2);
-      max-width: 520px;
-      line-height: 1.85;
-    }
-    .fi {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .65s ease, transform .65s ease;
-    }
-    .fi.v { opacity: 1; transform: translateY(0); }
-
-    /* ── Nav ────────────────────────────────── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(255,255,255,.92);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 5vw;
-      height: 64px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-logo {
-      font-weight: 700; font-size: .95rem;
-      color: var(--navy); text-decoration: none;
-      letter-spacing: .02em;
-    }
-    .nav-logo span { color: var(--blue); }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      font-size: .85rem; color: var(--text2); text-decoration: none;
-      font-weight: 500; transition: color .2s;
-    }
-    .nav-links a:hover { color: var(--navy); }
-    .nav-cta {
-      background: var(--orange); color: #fff;
-      padding: .5rem 1.2rem; border-radius: 6px;
-      font-size: .85rem; font-weight: 600;
-      text-decoration: none; transition: opacity .2s, transform .2s;
-    }
-    .nav-cta:hover { opacity: .88; transform: translateY(-1px); }
-    .nav-ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-    .nav-ham span { width: 22px; height: 1.5px; background: var(--navy); border-radius: 2px; transition: .3s; }
-    .mob-menu {
-      display: none; position: fixed; inset: 0; background: #fff;
-      z-index: 99; flex-direction: column; align-items: center;
-      justify-content: center; gap: 2.5rem; padding-top: 64px;
-    }
-    .mob-menu.open { display: flex; }
-    .mob-menu a {
-      font-size: 1.6rem; font-weight: 700;
-      color: var(--navy); text-decoration: none;
-    }
-    .mob-menu a:hover { color: var(--blue); }
-
-    /* ── Hero ───────────────────────────────── */
-    #hero {
-      padding: 140px 5vw 80px;
-      background: linear-gradient(160deg, #f0f6ff 0%, #ffffff 60%);
-      position: relative; overflow: hidden;
-    }
-    .hero-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 4rem; align-items: center;
-    }
-    .hero-tag {
-      display: inline-flex; align-items: center; gap: .5rem;
-      background: rgba(37,99,235,.08); color: var(--blue);
-      padding: .35rem 1rem; border-radius: 100px;
-      font-size: .78rem; font-weight: 600; letter-spacing: .06em;
-      margin-bottom: 1.5rem;
-    }
-    .hero-tag::before {
-      content: ''; width: 7px; height: 7px;
-      background: var(--blue); border-radius: 50%;
-      animation: pulse 2s ease-in-out infinite;
-    }
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.3)} }
-    .hero-h1 {
-      font-size: clamp(2rem, 4.5vw, 3.2rem);
-      font-weight: 700; line-height: 1.25;
-      color: var(--navy); margin-bottom: 1.2rem;
-    }
-    .hero-h1 em {
-      font-style: normal; color: var(--blue);
-      position: relative;
-    }
-    .hero-h1 em::after {
-      content: ''; position: absolute;
-      bottom: 2px; left: 0; right: 0; height: 3px;
-      background: var(--orange); border-radius: 2px;
-    }
-    .hero-lead {
-      font-size: 1rem; color: var(--text2);
-      line-height: 1.9; margin-bottom: 2rem; max-width: 440px;
-    }
-    .hero-btns { display: flex; gap: .9rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
-    .btn-main {
-      background: var(--blue); color: #fff;
-      padding: .85rem 2rem; border-radius: 8px;
-      font-size: .92rem; font-weight: 600;
-      text-decoration: none; display: inline-flex; align-items: center; gap: .5rem;
-      transition: background .2s, transform .2s;
-    }
-    .btn-main:hover { background: #1d4ed8; transform: translateY(-2px); }
-    .btn-sub {
-      background: transparent; color: var(--navy);
-      padding: .85rem 2rem; border-radius: 8px;
-      font-size: .92rem; font-weight: 500;
-      text-decoration: none; border: 1.5px solid var(--border);
-      transition: border-color .2s, transform .2s;
-    }
-    .btn-sub:hover { border-color: var(--navy); transform: translateY(-2px); }
-    .hero-trust {
-      display: flex; flex-wrap: wrap; gap: 1.2rem;
-    }
-    .trust-item {
-      display: flex; align-items: center; gap: .4rem;
-      font-size: .78rem; color: var(--text2); font-weight: 500;
-    }
-    .trust-item .icon { font-size: 1rem; }
-
-    /* Hero visual: browser mockup */
-    .hero-visual { position: relative; }
-    .browser-mock {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 20px 60px rgba(30,58,95,.12), 0 4px 16px rgba(30,58,95,.08);
-      overflow: hidden;
-      animation: float 6s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    .browser-bar {
-      background: #f1f5f9; padding: .6rem 1rem;
-      display: flex; align-items: center; gap: .6rem;
-    }
-    .browser-dots { display: flex; gap: .35rem; }
-    .browser-dots span {
-      width: 10px; height: 10px; border-radius: 50%;
-    }
-    .browser-dots span:nth-child(1) { background: #fc8181; }
-    .browser-dots span:nth-child(2) { background: #f6ad55; }
-    .browser-dots span:nth-child(3) { background: #68d391; }
-    .browser-url {
-      flex: 1; background: #fff; border-radius: 4px;
-      padding: .25rem .6rem; font-size: .72rem; color: var(--text2);
-      font-family: monospace;
-    }
-    .browser-body {
-      height: 280px;
-      background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 1rem;
-      padding: 1.5rem;
-    }
-    .mock-nav {
-      width: 100%; height: 32px; background: rgba(255,255,255,.12);
-      border-radius: 6px;
-    }
-    .mock-hero {
-      width: 100%;
-      display: flex; flex-direction: column; gap: .6rem; align-items: flex-start;
-    }
-    .mock-h { height: 14px; background: rgba(255,255,255,.9); border-radius: 4px; }
-    .mock-h.w80 { width: 80%; }
-    .mock-h.w60 { width: 60%; background: rgba(255,255,255,.6); }
-    .mock-h.w45 { width: 45%; background: rgba(255,255,255,.4); height: 10px; }
-    .mock-btn {
-      margin-top: .4rem; height: 28px; width: 110px;
-      background: var(--orange); border-radius: 6px;
-    }
-    .mock-cards {
-      width: 100%; display: flex; gap: .5rem;
-    }
-    .mock-card {
-      flex: 1; height: 50px;
-      background: rgba(255,255,255,.15); border-radius: 6px;
-    }
-    .badge-float {
-      position: absolute; bottom: -12px; right: -12px;
-      background: #fff; border-radius: 10px;
-      box-shadow: 0 8px 24px rgba(30,58,95,.15);
-      padding: .8rem 1rem;
-      display: flex; align-items: center; gap: .6rem;
-      font-size: .78rem; font-weight: 600; color: var(--navy);
-    }
-    .badge-float .badge-icon { font-size: 1.4rem; }
-
-    /* ── About ──────────────────────────────── */
-    #about {
-      padding: 7rem 5vw;
-      background: var(--bg);
-    }
-    .about-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1.4fr;
-      gap: 5rem; align-items: center;
-    }
-    .about-card {
-      background: var(--bg2);
-      border-radius: 16px;
-      padding: 2.5rem;
-      border: 1px solid var(--border);
-    }
-    .about-avatar {
-      width: 80px; height: 80px;
-      background: linear-gradient(135deg, #2563eb, #1e3a5f);
-      border-radius: 50%; margin-bottom: 1.2rem;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2rem; color: #fff; font-weight: 700;
-      font-family: 'DM Sans', sans-serif;
-    }
-    .about-name { font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: .2rem; }
-    .about-role { font-size: .82rem; color: var(--text2); margin-bottom: 1.5rem; }
-    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
-    .astat {
-      background: #fff; border-radius: 8px;
-      border: 1px solid var(--border);
-      padding: .8rem; text-align: center;
-    }
-    .astat-num {
-      font-size: 1.5rem; font-weight: 700;
-      color: var(--blue); line-height: 1;
-    }
-    .astat-lbl { font-size: .68rem; color: var(--text2); margin-top: .2rem; }
-
-    .about-text h2 { color: var(--navy); }
-    .about-text p {
-      font-size: .95rem; color: var(--text2);
-      line-height: 1.9; margin-bottom: 1.2rem;
-    }
-    .about-text p strong { color: var(--text); font-weight: 600; }
-    .skill-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.5rem; }
-    .chip {
-      background: var(--bg3); border: 1px solid var(--border);
-      color: var(--text2); padding: .3rem .8rem;
-      border-radius: 100px; font-size: .75rem; font-weight: 500;
-    }
-
-    /* ── Works ──────────────────────────────── */
-    #works {
-      padding: 7rem 5vw;
-      background: var(--bg2);
-    }
-    .works-header { max-width: 1100px; margin: 0 auto 3rem; }
-    .works-grid {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-    .work-card {
-      background: #fff; border-radius: var(--radius);
-      border: 1px solid var(--border);
-      overflow: hidden;
-      transition: transform .3s, box-shadow .3s;
-    }
-    .work-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(30,58,95,.1); }
-    .work-screen {
-      height: 180px; position: relative; overflow: hidden;
-    }
-    .work-screen.style-corp {
-      background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
-    }
-    .work-screen.style-shop {
-      background: linear-gradient(135deg, #064e3b 0%, #059669 100%);
-    }
-    .work-screen.style-salon {
-      background: linear-gradient(135deg, #831843 0%, #db2777 100%);
-    }
-    .work-screen.style-lp {
-      background: linear-gradient(135deg, #78350f 0%, #ea580c 100%);
-    }
-    .work-screen-inner {
-      position: absolute; inset: 12px;
-      background: rgba(255,255,255,.12);
-      border-radius: 8px;
-      display: flex; flex-direction: column; gap: 8px; padding: 12px;
-    }
-    .ws-bar { height: 8px; background: rgba(255,255,255,.5); border-radius: 4px; }
-    .ws-bar.w70 { width: 70%; }
-    .ws-bar.w50 { width: 50%; background: rgba(255,255,255,.3); }
-    .ws-bar.w35 { width: 35%; background: rgba(255,255,255,.2); height: 6px; }
-    .ws-row { display: flex; gap: 6px; margin-top: auto; }
-    .ws-btn { height: 20px; width: 70px; background: rgba(255,255,255,.7); border-radius: 4px; }
-    .work-screen.style-earth {
-      background: linear-gradient(135deg, #44403c 0%, #92400e 100%);
-    }
-    .work-screen.style-slate {
-      background: linear-gradient(135deg, #1e3a5f 0%, #0f766e 100%);
-    }
-    .work-cs-badge {
-      position: absolute; top: 8px; right: 8px;
-      background: rgba(255,255,255,.9); color: var(--text2);
-      font-size: .65rem; font-weight: 600; letter-spacing: .06em;
-      padding: .2rem .5rem; border-radius: 4px;
-    }
-    .work-cs-badge.done {
-      background: #d1fae5; color: #065f46;
-    }
-    .work-info { padding: 1.2rem 1.4rem; }
-    .work-cat {
-      font-size: .7rem; font-weight: 600;
-      color: var(--blue); letter-spacing: .08em;
-      text-transform: uppercase; margin-bottom: .35rem;
-    }
-    .work-title { font-size: .95rem; font-weight: 600; color: var(--navy); margin-bottom: .3rem; }
-    .work-desc { font-size: .78rem; color: var(--text2); line-height: 1.6; }
-    .work-link {
-      display: inline-flex; align-items: center; gap: .3rem;
-      font-size: .78rem; font-weight: 600; color: var(--blue);
-      text-decoration: none; margin-top: .7rem;
-      transition: gap .2s;
-    }
-    .work-link:hover { gap: .6rem; }
-
-    /* ── How it works ───────────────────────── */
-    #process {
-      padding: 7rem 5vw;
-      background: var(--bg);
-    }
-    .process-inner { max-width: 1100px; margin: 0 auto; }
-    .process-header { margin-bottom: 3.5rem; }
-    .steps {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem; position: relative;
-    }
-    .step {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 2rem 1.8rem;
-      position: relative;
-    }
-    .step-num {
-      width: 44px; height: 44px; border-radius: 50%;
-      background: var(--blue); color: #fff;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; font-weight: 700;
-      margin-bottom: 1.2rem;
-    }
-    .step-title { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: .5rem; }
-    .step-desc { font-size: .82rem; color: var(--text2); line-height: 1.75; }
-    .step-arrow {
-      position: absolute; right: -1.3rem; top: 50%;
-      transform: translateY(-50%);
-      font-size: 1.2rem; color: var(--border); z-index: 1;
-    }
-
-    /* ── Services ───────────────────────────── */
-    #services {
-      padding: 7rem 5vw;
-      background: var(--bg2);
-    }
-    .svc-inner { max-width: 1100px; margin: 0 auto; }
-    .svc-header { margin-bottom: 3rem; }
-    .svc-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.2rem;
-    }
-    .svc-card {
-      background: #fff; border-radius: var(--radius);
-      border: 1px solid var(--border); padding: 1.8rem;
-      transition: border-color .25s, transform .25s, box-shadow .25s;
-    }
-    .svc-card:hover {
-      border-color: var(--blue);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(37,99,235,.08);
-    }
-    .svc-icon {
-      width: 48px; height: 48px;
-      background: rgba(37,99,235,.08);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem; margin-bottom: 1rem;
-    }
-    .svc-title { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: .5rem; }
-    .svc-desc { font-size: .82rem; color: var(--text2); line-height: 1.75; margin-bottom: 1rem; }
-    .svc-points { list-style: none; }
-    .svc-points li {
-      font-size: .78rem; color: var(--text2);
-      padding: .2rem 0; display: flex; gap: .4rem;
-    }
-    .svc-points li::before { content: '✓'; color: var(--blue); font-weight: 700; flex-shrink: 0; }
-
-    /* ── FAQ ─────────────────────────────────── */
-    #faq { padding: 7rem 5vw; background: var(--bg); }
-    .faq-inner { max-width: 760px; margin: 0 auto; }
-    .faq-header { margin-bottom: 2.5rem; }
-    .faq-item {
-      border-bottom: 1px solid var(--border); padding: 1.4rem 0;
-    }
-    .faq-q {
-      font-size: .95rem; font-weight: 600; color: var(--navy);
-      cursor: pointer; display: flex; justify-content: space-between;
-      align-items: flex-start; gap: 1rem;
-      background: none; border: none; width: 100%; text-align: left;
-      padding: 0;
-    }
-    .faq-q .arrow { color: var(--blue); font-size: 1rem; transition: transform .3s; flex-shrink: 0; margin-top: 2px; }
-    .faq-q.open .arrow { transform: rotate(180deg); }
-    .faq-a {
-      font-size: .88rem; color: var(--text2);
-      line-height: 1.85; margin-top: .9rem;
-      display: none;
-    }
-    .faq-a.open { display: block; }
-
-    /* ── Contact ─────────────────────────────── */
-    #contact {
-      padding: 7rem 5vw;
-      background: linear-gradient(160deg, #1e3a5f 0%, #2563eb 100%);
-      text-align: center; color: #fff;
-    }
-    .contact-inner { max-width: 680px; margin: 0 auto; }
-    #contact .section-tag { background: rgba(255,255,255,.15); color: #fff; }
-    #contact .section-title { color: #fff; }
-    #contact .section-sub { color: rgba(255,255,255,.78); margin: 0 auto 3rem; max-width: 480px; }
-    .contact-cards {
-      display: flex; gap: 1.2rem; flex-wrap: wrap;
-      justify-content: center; margin-bottom: 2rem;
-    }
-    .contact-card {
-      background: rgba(255,255,255,.12); backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: var(--radius); padding: 1.8rem 2.2rem;
-      min-width: 200px; text-decoration: none; color: #fff;
-      display: flex; flex-direction: column; align-items: center; gap: .6rem;
-      transition: background .25s, transform .25s;
-    }
-    .contact-card:hover { background: rgba(255,255,255,.2); transform: translateY(-3px); }
-    .cc-icon { font-size: 2rem; }
-    .cc-lbl { font-size: .7rem; opacity: .75; letter-spacing: .1em; text-transform: uppercase; }
-    .cc-val { font-size: .9rem; font-weight: 600; }
-    .contact-note { font-size: .8rem; opacity: .65; }
-
-    /* ── Footer ──────────────────────────────── */
-    footer {
-      background: var(--navy);
-      padding: 2rem 5vw;
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 1rem;
-    }
-    .f-logo { font-weight: 700; font-size: .9rem; color: #fff; }
-    .f-logo span { color: #60a5fa; }
-    .f-copy { font-size: .72rem; color: rgba(255,255,255,.45); }
-
-    /* ── Responsive ──────────────────────────── */
-    @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .hero-visual { order: -1; max-width: 480px; margin: 0 auto; }
-      .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-    }
-    @media (max-width: 640px) {
-      nav { padding: 0 4vw; }
-      .nav-links, .nav-cta { display: none; }
-      .nav-ham { display: flex; }
-      #hero { padding: 110px 4vw 60px; }
-      .step-arrow { display: none; }
-      footer { flex-direction: column; text-align: center; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho+B1:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/season.css">
+  <link rel="stylesheet" href="css/pages/home.css">
 </head>
 <body>
 
-<!-- Nav -->
-<nav>
-  <a href="#hero" class="nav-logo">craft<span>_site_</span>studio</a>
-  <ul class="nav-links">
-    <li><a href="#about">私について</a></li>
-    <li><a href="#works">対応業種</a></li>
-    <li><a href="#process">制作の流れ</a></li>
-    <li><a href="#services">サービス</a></li>
-    <li><a href="#faq">よくある質問</a></li>
-  </ul>
-  <a href="#contact" class="nav-cta">無料相談する</a>
-  <div class="nav-ham" id="ham" onclick="toggleMob()">
+<!-- ===== Navigation ===== -->
+<header id="nav">
+  <a class="nav-logo" href="index.html">
+    <span class="nav-logo-text">大雄山宝鏡寺</span>
+    <span class="nav-logo-sub">DAIYUZAN HOKYOJI</span>
+  </a>
+  <nav class="nav-links" aria-label="メインナビゲーション">
+    <a class="nav-link" href="about.html" data-i18n="nav.about">宝鏡寺について</a>
+    <a class="nav-link" href="honzon.html" data-i18n="nav.honzon">御本尊</a>
+    <a class="nav-link" href="events.html" data-i18n="nav.events">年間行事</a>
+    <a class="nav-link" href="practice.html" data-i18n="nav.practice">参禅</a>
+    <a class="nav-link" href="service.html" data-i18n="nav.service">御供養・御祈祷</a>
+    <a class="nav-link" href="access.html" data-i18n="nav.access">アクセス</a>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="ja" onclick="setLang('ja')">JA</button>
+      <span class="lang-divider">|</span>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+  </nav>
+  <button class="hamburger" id="hamburger" aria-label="メニューを開く">
     <span></span><span></span><span></span>
-  </div>
-</nav>
+  </button>
+</header>
 
-<!-- Mobile Menu -->
-<div class="mob-menu" id="mobMenu">
-  <a href="#about"    onclick="toggleMob()">私について</a>
-  <a href="#works"    onclick="toggleMob()">対応業種</a>
-  <a href="#process"  onclick="toggleMob()">制作の流れ</a>
-  <a href="#services" onclick="toggleMob()">サービス</a>
-  <a href="#faq"      onclick="toggleMob()">よくある質問</a>
-  <a href="#contact"  onclick="toggleMob()" style="color:var(--orange)">無料相談する</a>
+<!-- モバイルメニュー -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <a class="nav-link" href="about.html" data-i18n="nav.about">宝鏡寺について</a>
+  <a class="nav-link" href="honzon.html" data-i18n="nav.honzon">御本尊</a>
+  <a class="nav-link" href="events.html" data-i18n="nav.events">年間行事</a>
+  <a class="nav-link" href="practice.html" data-i18n="nav.practice">参禅</a>
+  <a class="nav-link" href="service.html" data-i18n="nav.service">御供養・御祈祷</a>
+  <a class="nav-link" href="access.html" data-i18n="nav.access">アクセス</a>
+  <div class="lang-switcher">
+    <button class="lang-btn active" data-lang="ja" onclick="setLang('ja')">JA</button>
+    <span class="lang-divider">|</span>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+  </div>
 </div>
 
-<!-- ═══ HERO ═══ -->
-<section id="hero">
-  <div class="hero-inner">
-    <div>
-      <div class="hero-tag">Webサイト制作 / フリーランス</div>
-      <h1 class="hero-h1">
-        あなたのビジネスを、<br>
-        <em>ウェブで輝かせます。</em>
-      </h1>
-      <p class="hero-lead">
-        「良い仕事をしているのに、ウェブで損をしている」<br>
-        そんな方のために、CS卒のITエンジニアが<br>
-        業種・地域を問わず丁寧にサイト制作をします。
-      </p>
-      <div class="hero-btns">
-        <a href="#contact" class="btn-main">
-          無料でまず相談する
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="#works" class="btn-sub">対応業種を見る</a>
-      </div>
-      <div class="hero-trust">
-        <div class="trust-item"><span class="icon">🎓</span>コンピュータサイエンス卒</div>
-        <div class="trust-item"><span class="icon">💼</span>ITエンジニア在職</div>
-        <div class="trust-item"><span class="icon">🌏</span>英語対応可</div>
-        <div class="trust-item"><span class="icon">📍</span>横浜拠点・全国対応</div>
-      </div>
-    </div>
+<main>
 
-    <div class="hero-visual fi">
-      <div class="browser-mock">
-        <div class="browser-bar">
-          <div class="browser-dots">
-            <span></span><span></span><span></span>
-          </div>
-          <div class="browser-url">your-business.com</div>
-        </div>
-        <div class="browser-body">
-          <div class="mock-nav"></div>
-          <div class="mock-hero">
-            <div class="mock-h w80"></div>
-            <div class="mock-h w60"></div>
-            <div class="mock-h w45"></div>
-            <div class="mock-btn"></div>
-          </div>
-          <div class="mock-cards">
-            <div class="mock-card"></div>
-            <div class="mock-card"></div>
-            <div class="mock-card"></div>
-          </div>
-        </div>
-      </div>
-      <div class="badge-float">
-        <span class="badge-icon">✨</span>
-        <span>あなた専用のサイトを<br>丁寧に制作します</span>
+  <!-- ===== Hero ===== -->
+  <section class="hero" aria-label="ヒーローセクション">
+    <div class="hero-bg" id="hero-bg"></div>
+    <div class="hero-overlay" id="hero-overlay"></div>
+    <svg class="hero-kamon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="100" cy="100" r="90" fill="none" stroke="white" stroke-width="1"/>
+      <circle cx="100" cy="100" r="70" fill="none" stroke="white" stroke-width="0.5"/>
+      <circle cx="100" cy="100" r="50" fill="none" stroke="white" stroke-width="1"/>
+      <line x1="100" y1="10" x2="100" y2="190" stroke="white" stroke-width="0.5"/>
+      <line x1="10" y1="100" x2="190" y2="100" stroke="white" stroke-width="0.5"/>
+    </svg>
+    <canvas class="hero-particle-canvas" id="hero-particles" aria-hidden="true"></canvas>
+    <div class="hero-content">
+      <span class="hero-label" data-i18n="hero.label">DAIYUZAN HOKYOJI</span>
+      <div class="hero-line" aria-hidden="true"></div>
+      <h1 class="hero-title" data-i18n="hero.title">大雄山 宝鏡寺</h1>
+      <p class="hero-subtitle" data-i18n="hero.subtitle">竹之下地蔵尊</p>
+      <span class="hero-badge" data-i18n="hero.badge">曹洞宗 ｜ 創建 天平19年</span>
+    </div>
+    <div class="scroll-indicator" aria-hidden="true">
+      <div class="scroll-line"></div>
+      <span data-i18n="hero.scroll">SCROLL</span>
+    </div>
+  </section>
+
+  <!-- ===== インフォバー ===== -->
+  <div class="info-bar">
+    <div class="container">
+      <div class="info-bar-inner anim-fade-up">
+        <span class="info-bar-item">
+          <span class="label">ACCESS</span>
+          <span data-i18n="info.access">足柄駅 徒歩7分</span>
+        </span>
+        <span class="info-bar-divider" aria-hidden="true">|</span>
+        <span class="info-bar-item">
+          <span class="label">TEL</span>
+          <a href="tel:0550760759" data-i18n="info.tel">0550-76-0759</a>
+        </span>
+        <span class="info-bar-divider" aria-hidden="true">|</span>
+        <span class="info-bar-item">
+          <span class="label">OPEN</span>
+          <span data-i18n="info.hours">9:00〜16:00</span>
+        </span>
       </div>
     </div>
   </div>
-</section>
 
-<!-- ═══ ABOUT ═══ -->
-<section id="about">
-  <div class="about-inner">
+  <!-- ===== 宝鏡寺についてセクション ===== -->
+  <section class="about-section section" aria-labelledby="about-title">
+    <div class="gold-separator" aria-hidden="true"></div>
+    <div class="about-photo-wrap anim-fade-up">
+      <div class="about-photo-bg" role="img" aria-label="宝鏡寺 本堂">宝鏡寺</div>
+      <div class="about-photo-overlay">
+        <p class="about-photo-caption" data-i18n="about.caption">大雄山 宝鏡寺</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="about-text-block">
+        <span class="section-label anim-fade-up" data-i18n="about.label">ABOUT</span>
+        <div class="section-title-wrap anim-fade-up">
+          <h2 class="section-title" id="about-title" data-i18n="about.title">宝鏡寺について</h2>
+        </div>
+        <p class="about-lead anim-fade-up delay-2">
+          大雄山宝鏡寺（ほうきょうじ）は、天平19年（747年）創建の曹洞宗寺院です。富士山・金時山の麓、静岡県小山町竹之下に位置し、「竹之下のお地蔵さん」として地域に親しまれています。山号「大雄山」は曹洞宗の精神を表し、延命地蔵菩薩を御本尊として人々の祈りを受け続けてきました。
+        </p>
+        <div style="margin-top:40px;" class="anim-fade-up delay-3">
+          <a class="btn-outline" href="about.html">宝鏡寺について詳しく</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <div class="fi">
-      <div class="about-card">
-        <div class="about-avatar">K</div>
-        <div class="about-name">井上 和紀（Kazuki Inoue）</div>
-        <div class="about-role">Webデザイナー / フロントエンドエンジニア</div>
-        <div class="about-stats">
-          <div class="astat">
-            <div class="astat-num">3+</div>
-            <div class="astat-lbl">デモ制作実績</div>
+  <!-- ===== 御本尊セクション ===== -->
+  <section class="honzon-section section" aria-labelledby="honzon-title">
+    <div class="gold-separator" aria-hidden="true"></div>
+    <div class="honzon-bg-text" aria-hidden="true">地蔵</div>
+    <div class="container">
+      <span class="section-label anim-fade-up" data-i18n="honzon.label">MAIN DEITY</span>
+      <div class="honzon-inner">
+        <div class="honzon-photo-wrap anim-slide-left">
+          <div class="honzon-photo-bg" role="img" aria-label="御本尊 延命地蔵菩薩像">🪔</div>
+        </div>
+        <div class="honzon-text anim-slide-right">
+          <div class="section-title-wrap">
+            <h2 class="section-title honzon-title-main" id="honzon-title" data-i18n="honzon.title">御本尊 延命地蔵菩薩</h2>
           </div>
-          <div class="astat">
-            <div class="astat-num">CS</div>
-            <div class="astat-lbl">専攻卒</div>
+          <p class="honzon-title-sub" data-i18n="honzon.tradition">伝 聖徳太子 御神作</p>
+          <p class="honzon-desc">
+            延命地蔵尊は聖徳太子の御作と伝えられており、数多の霊験あらたかとして今に伝わります。初地蔵・大祭には各地から篤信者の参拝が続いています。町の人々から「竹之下のお地蔵さん」と親しまれ、現代においても由緒あるパワースポットとして知られています。
+          </p>
+          <a class="link-arrow" href="honzon.html">御本尊について詳しく</a>
+        </div>
+      </div>
+    </div>
+    <div class="gold-separator" aria-hidden="true"></div>
+  </section>
+
+  <!-- ===== 年間行事セクション ===== -->
+  <section class="events-section section" aria-labelledby="events-title">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label anim-fade-up" data-i18n="events.label">ANNUAL EVENTS</span>
+        <div class="section-title-wrap anim-fade-up">
+          <h2 class="section-title" id="events-title" data-i18n="events.title">年間行事</h2>
+        </div>
+      </div>
+      <div class="events-grid">
+        <article class="event-card anim-scale-in delay-1">
+          <div class="event-card-img-wrap">
+            <div class="event-card-placeholder" role="img" aria-label="初地蔵供養">🕯</div>
+            <div class="event-card-overlay"></div>
           </div>
-          <div class="astat">
-            <div class="astat-num">全国</div>
-            <div class="astat-lbl">対応エリア</div>
+          <div class="event-card-body">
+            <p class="event-card-date" data-i18n="events.hatsujizo.date">1月 23日・24日</p>
+            <h3 class="event-card-name" data-i18n="events.hatsujizo.name">初地蔵供養</h3>
+            <p class="event-card-desc" data-i18n="events.hatsujizo.desc">新年最初の縁日。大般若転読・先祖供養。</p>
           </div>
-          <div class="astat">
-            <div class="astat-num">EN</div>
-            <div class="astat-lbl">英語対応可</div>
+        </article>
+        <article class="event-card anim-scale-in delay-2">
+          <div class="event-card-img-wrap">
+            <div class="event-card-placeholder" role="img" aria-label="竹之下地蔵尊大祭">🥁</div>
+            <div class="event-card-overlay"></div>
+          </div>
+          <div class="event-card-body">
+            <p class="event-card-date" data-i18n="events.taisai.date">8月 23日・24日</p>
+            <h3 class="event-card-name" data-i18n="events.taisai.name">竹之下地蔵尊大祭</h3>
+            <p class="event-card-desc" data-i18n="events.taisai.desc">夏の大祭。相撲奉納・大般若祈祷。</p>
+          </div>
+        </article>
+        <article class="event-card anim-scale-in delay-3">
+          <div class="event-card-img-wrap">
+            <div class="event-card-placeholder" role="img" aria-label="紅葉ライトアップ 竹あかり">🍂</div>
+            <div class="event-card-overlay"></div>
+          </div>
+          <div class="event-card-body">
+            <p class="event-card-date" data-i18n="events.koyo.date">11月（勤労感謝の日前後）</p>
+            <h3 class="event-card-name" data-i18n="events.koyo.name">紅葉ライトアップ</h3>
+            <p class="event-card-desc" data-i18n="events.koyo.desc">竹あかりと紅葉の幻想的な夜。</p>
+          </div>
+        </article>
+      </div>
+      <div style="text-align:center; margin-top:48px;" class="anim-fade-up">
+        <a class="link-arrow" href="events.html">年間行事をすべて見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 参禅セクション ===== -->
+  <section class="zazen-section section" aria-labelledby="zazen-title">
+    <div class="gold-separator" aria-hidden="true"></div>
+    <div class="zazen-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="zazen-content">
+        <span class="section-label anim-fade-up" data-i18n="zazen.label">PRACTICE</span>
+        <div class="section-title-wrap anim-fade-up" style="display:block; text-align:center;">
+          <h2 class="section-title" id="zazen-title" data-i18n="zazen.title" style="color:var(--white);">参禅・坐禅会</h2>
+        </div>
+        <p class="zazen-quote anim-fade-up delay-1" data-i18n="zazen.quote">やさしい坐禅</p>
+        <p class="zazen-desc anim-fade-up delay-2" data-i18n="zazen.desc">初心者の方も、どなたでもお気軽にご参加ください。</p>
+        <div class="anim-fade-up delay-3">
+          <a class="btn-primary" href="practice.html" data-i18n="zazen.btn">坐禅会について</a>
+        </div>
+      </div>
+    </div>
+    <div class="gold-separator" aria-hidden="true"></div>
+  </section>
+
+  <!-- ===== NEWSセクション ===== -->
+  <section class="news-section section" aria-labelledby="news-title">
+    <div class="container">
+      <div class="news-header anim-fade-up">
+        <span class="section-label" id="news-title" data-i18n="news.label">NEWS</span>
+      </div>
+      <!-- TODO: 実際のお知らせに差し替え -->
+      <ul class="news-list anim-fade-up">
+        <li class="news-item">
+          <time class="news-date" datetime="2025-11-18">2025.11.18</time>
+          <a class="news-title" href="events.html">紅葉ライトアップのお知らせ（11月21日・22日）</a>
+        </li>
+        <li class="news-item">
+          <time class="news-date" datetime="2025-08-01">2025.08.01</time>
+          <a class="news-title" href="events.html">8月大祭のご案内（8月23日・24日）</a>
+        </li>
+        <li class="news-item">
+          <time class="news-date" datetime="2025-03-15">2025.03.15</time>
+          <a class="news-title" href="practice.html">春季坐禅会のスケジュールを公開しました</a>
+        </li>
+        <li class="news-item">
+          <time class="news-date" datetime="2025-01-10">2025.01.10</time>
+          <a class="news-title" href="events.html">初地蔵供養のご案内（1月23日・24日）</a>
+        </li>
+      </ul>
+      <div class="anim-fade-up">
+        <a class="link-arrow" href="events.html" data-i18n="news.more">すべてのお知らせを見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== アクセスセクション ===== -->
+  <section class="home-access-section" aria-labelledby="access-title">
+    <div class="container" style="padding-top:120px;">
+      <span class="section-label anim-fade-up" data-i18n="access.label">ACCESS</span>
+      <div class="section-title-wrap anim-fade-up">
+        <h2 class="section-title" id="access-title" data-i18n="access.title">アクセス</h2>
+      </div>
+    </div>
+    <div class="home-map-wrap anim-fade-up">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d812.8037754027955!2d138.98268396960427!3d35.32995349999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601ab7699f7af809%3A0x3eb07fd41b9fde0a!2z5a6u5YWD5bGx5a6u5YGl5a65!5e0!3m2!1sja!2sjp!4v1715600000000"
+        width="100%"
+        height="450"
+        style="border:0; display:block;"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="宝鏡寺 地図">
+      </iframe>
+    </div>
+    <div class="container">
+      <div class="home-access-info anim-fade-up">
+        <p class="home-access-name">大雄山宝鏡寺</p>
+        <p class="home-access-addr">〒410-1313 静岡県駿東郡小山町竹之下1462</p>
+        <div class="home-access-items">
+          <div class="home-access-item">
+            <span class="home-access-item-label">電車</span>
+            <span class="home-access-item-value">JR御殿場線「足柄駅」徒歩約7分</span>
+            <span class="access-warn">⚠️ 小田急線「足柄駅」とは異なります</span>
+          </div>
+          <div class="home-access-item">
+            <span class="home-access-item-label">お車</span>
+            <span class="home-access-item-value">御殿場ICより約15分</span>
+          </div>
+          <div class="home-access-item">
+            <span class="home-access-item-label">駐車場</span>
+            <span class="home-access-item-value">約5台（無料）</span>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="about-text fi" style="transition-delay:.1s">
-      <div class="section-tag">About</div>
-      <h2 class="section-title">技術と経験で、<br>あなたの想いを形に</h2>
-      <p>
-        大学では<strong>コンピュータサイエンスと英語</strong>を専攻。
-        PythonとAIを用いた感情認識の研究を行い、
-        情報処理学会での発表も経験しました。
-        卒業後は<strong>カナダ・バンクーバーへワーキングホリデー</strong>で1年間の海外生活を経験。
-      </p>
-      <p>
-        ITエンジニアとして培った<strong>技術力を基盤</strong>に、
-        Webサイト制作を専門的に手掛けています。
-        「エンジニアとしての実装力」と「デザインへのこだわり」を両立し、
-        見た目も機能も優れたサイトを丁寧にお届けします。
-      </p>
-      <div class="skill-chips">
-        <span class="chip">HTML / CSS</span>
-        <span class="chip">JavaScript</span>
-        <span class="chip">Java</span>
-        <span class="chip">Python</span>
-        <span class="chip">AI・機械学習</span>
-        <span class="chip">SEO対策</span>
-        <span class="chip">レスポンシブ対応</span>
-        <span class="chip">英語対応</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══ WORKS ═══ -->
-<section id="works">
-  <div class="works-header fi">
-    <div class="section-tag">Works</div>
-    <h2 class="section-title">こんなサイト、作れます</h2>
-    <p class="section-sub">業種・規模を問わずご相談ください。制作実績は順次公開予定です。</p>
-  </div>
-  <div class="works-grid">
-    <div class="work-card fi" style="transition-delay:.05s">
-      <div class="work-screen style-corp">
-        <div class="work-screen-inner">
-          <div class="ws-bar w70"></div>
-          <div class="ws-bar w50"></div>
-          <div class="ws-bar w35"></div>
-          <div class="ws-row"><div class="ws-btn"></div></div>
+        <div style="margin-top:36px;">
+          <a class="btn-outline" href="access.html">アクセス詳細・お問合わせ</a>
         </div>
-        <span class="work-cs-badge">Coming Soon</span>
-      </div>
-      <div class="work-info">
-        <div class="work-cat">コーポレートサイト</div>
-        <div class="work-title">建設・工務店・リフォーム業</div>
-        <div class="work-desc">施工実績・対応エリア・お客様の声をわかりやすく整理し、問い合わせが増える構成で設計します。</div>
       </div>
     </div>
-    <div class="work-card fi" style="transition-delay:.1s">
-      <div class="work-screen style-shop">
-        <div class="work-screen-inner">
-          <div class="ws-bar w70"></div>
-          <div class="ws-bar w50"></div>
-          <div class="ws-bar w35"></div>
-          <div class="ws-row"><div class="ws-btn"></div></div>
-        </div>
-        <span class="work-cs-badge">Coming Soon</span>
-      </div>
-      <div class="work-info">
-        <div class="work-cat">飲食・カフェ・食物販</div>
-        <div class="work-title">飲食店・テイクアウト・ECサイト</div>
-        <div class="work-desc">メニュー・アクセス・予約導線をわかりやすく整理。SNS集客とも連携しやすい構成で制作します。</div>
-      </div>
-    </div>
-    <div class="work-card fi" style="transition-delay:.15s">
-      <div class="work-screen style-salon">
-        <div class="work-screen-inner">
-          <div class="ws-bar w70"></div>
-          <div class="ws-bar w50"></div>
-          <div class="ws-bar w35"></div>
-          <div class="ws-row"><div class="ws-btn"></div></div>
-        </div>
-        <span class="work-cs-badge">Coming Soon</span>
-      </div>
-      <div class="work-info">
-        <div class="work-cat">美容・サロン・ネイル</div>
-        <div class="work-title">美容室・エステ・ネイルサロン</div>
-        <div class="work-desc">お店の雰囲気が伝わるデザインで、新規の来店・予約につなげる構成で制作します。</div>
-      </div>
-    </div>
-    <div class="work-card fi" style="transition-delay:.2s">
-      <div class="work-screen style-lp">
-        <div class="work-screen-inner">
-          <div class="ws-bar w70"></div>
-          <div class="ws-bar w50"></div>
-          <div class="ws-bar w35"></div>
-          <div class="ws-row"><div class="ws-btn"></div></div>
-        </div>
-        <span class="work-cs-badge">Coming Soon</span>
-      </div>
-      <div class="work-info">
-        <div class="work-cat">ランディングページ</div>
-        <div class="work-title">士業・コンサル・フリーランス</div>
-        <div class="work-desc">強みや提供できる価値を整理して、問い合わせ・契約につなげる1ページ型サイトを制作します。</div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══ PROCESS ═══ -->
-<section id="process">
-  <div class="process-inner">
-    <div class="process-header fi">
-      <div class="section-tag">Flow</div>
-      <h2 class="section-title">制作の流れ</h2>
-      <p class="section-sub">ご依頼から納品まで、丁寧にサポートします。<br>まずは気軽にご相談ください。</p>
-    </div>
-    <div class="steps">
-      <div class="step fi" style="transition-delay:.05s">
-        <div class="step-num">1</div>
-        <div class="step-title">無料デモ制作・ご相談</div>
-        <div class="step-desc">まずお気軽にDMまたはメールでご連絡ください。ご要望をヒアリングし、無料でデモサイトを制作してご提案します。</div>
-        <span class="step-arrow">›</span>
-      </div>
-      <div class="step fi" style="transition-delay:.1s">
-        <div class="step-num">2</div>
-        <div class="step-title">ご契約・本制作</div>
-        <div class="step-desc">デモサイトをご確認いただき、気に入っていただければ正式にご契約。要望に合わせてカスタマイズしていきます。</div>
-        <span class="step-arrow">›</span>
-      </div>
-      <div class="step fi" style="transition-delay:.15s">
-        <div class="step-num">3</div>
-        <div class="step-title">確認・修正</div>
-        <div class="step-desc">制作中も随時確認いただけます。「ここを変えたい」「こういう雰囲気に」といったご要望に丁寧に対応します。</div>
-        <span class="step-arrow">›</span>
-      </div>
-      <div class="step fi" style="transition-delay:.2s">
-        <div class="step-num">4</div>
-        <div class="step-title">納品・公開</div>
-        <div class="step-desc">サイトを公開し、Googleに登録されるよう設定まで行います。公開後も保守・更新サポートをご利用いただけます。</div>
-      </div>
-    </div>
-  </div>
-</section>
+</main>
 
-<!-- ═══ SERVICES ═══ -->
-<section id="services">
-  <div class="svc-inner">
-    <div class="svc-header fi">
-      <div class="section-tag">Services</div>
-      <h2 class="section-title">提供サービスと料金</h2>
-      <p class="section-sub">料金はご要望・ページ数・機能によって異なります。<br>まずはご相談ください。お見積もり無料です。</p>
-    </div>
-    <div class="svc-grid">
-      <div class="svc-card fi">
-        <div class="svc-icon">🏢</div>
-        <div class="svc-title">コーポレートサイト</div>
-        <div class="svc-desc">会社・お店の信頼を高め、新規のお問い合わせを増やすサイトを制作します。</div>
-        <ul class="svc-points">
-          <li>会社概要・サービス紹介</li>
-          <li>お問い合わせフォーム</li>
-          <li>スマホ完全対応</li>
-          <li>Google検索対策（SEO）</li>
+<!-- ===== Footer ===== -->
+<footer id="footer">
+  <div class="gold-separator" aria-hidden="true"></div>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo-text">大雄山宝鏡寺</span>
+        <span class="footer-logo-sub">DAIYUZAN HOKYOJI</span>
+        <address class="footer-address">
+          〒410-1313<br>
+          静岡県駿東郡小山町竹之下1462<br>
+          Tel: <a href="tel:0550760759">0550-76-0759</a><br>
+          Fax: 0550-76-0779
+        </address>
+      </div>
+      <div>
+        <p class="footer-nav-title">MENU</p>
+        <ul class="footer-nav-list">
+          <li><a class="footer-nav-link" href="about.html" data-i18n="nav.about">宝鏡寺について</a></li>
+          <li><a class="footer-nav-link" href="honzon.html" data-i18n="nav.honzon">御本尊</a></li>
+          <li><a class="footer-nav-link" href="events.html" data-i18n="nav.events">年間行事</a></li>
+          <li><a class="footer-nav-link" href="practice.html" data-i18n="nav.practice">参禅</a></li>
+          <li><a class="footer-nav-link" href="service.html" data-i18n="nav.service">御供養・御祈祷</a></li>
+          <li><a class="footer-nav-link" href="access.html" data-i18n="nav.access">アクセス</a></li>
         </ul>
       </div>
-      <div class="svc-card fi" style="transition-delay:.08s">
-        <div class="svc-icon">🎯</div>
-        <div class="svc-title">ランディングページ（LP）</div>
-        <div class="svc-desc">商品・サービスの魅力を1ページに凝縮し、申し込み・購入につなげます。</div>
-        <ul class="svc-points">
-          <li>集客・コンバージョン特化設計</li>
-          <li>キャンペーン・期間限定にも対応</li>
-          <li>高速表示設計</li>
-          <li>SNS広告との連携</li>
-        </ul>
-      </div>
-      <div class="svc-card fi" style="transition-delay:.16s">
-        <div class="svc-icon">💼</div>
-        <div class="svc-title">ポートフォリオ・個人サイト</div>
-        <div class="svc-desc">フリーランス・クリエイター・士業の方の実績・強みをアピールするサイト。</div>
-        <ul class="svc-points">
-          <li>個性を活かしたオリジナルデザイン</li>
-          <li>実績・プロフィールの見せ方を工夫</li>
-          <li>ブログ・情報発信にも対応</li>
-        </ul>
-      </div>
-      <div class="svc-card fi" style="transition-delay:.24s">
-        <div class="svc-icon">🔄</div>
-        <div class="svc-title">リニューアル・改修</div>
-        <div class="svc-desc">5年以上更新のないサイトや、使いにくい既存サイトをモダンに改善します。</div>
-        <ul class="svc-points">
-          <li>デザイン全面リニューアル</li>
-          <li>スマホ対応・表示速度の改善</li>
-          <li>SEO・検索順位の改善</li>
-        </ul>
-      </div>
-      <div class="svc-card fi" style="transition-delay:.32s">
-        <div class="svc-icon">🛠</div>
-        <div class="svc-title">保守・運用サポート</div>
-        <div class="svc-desc">公開後も安心。お知らせの更新や写真の差し替えなど、継続サポートします。</div>
-        <ul class="svc-points">
-          <li>コンテンツ更新代行</li>
-          <li>セキュリティ・バックアップ</li>
-          <li>月額プランでご提供</li>
-        </ul>
-      </div>
-      <div class="svc-card fi" style="transition-delay:.40s">
-        <div class="svc-icon">🔍</div>
-        <div class="svc-title">SEO・集客サポート</div>
-        <div class="svc-desc">Googleで「地域名＋業種」で上位表示を目指すための技術的な対策を行います。</div>
-        <ul class="svc-points">
-          <li>Googleビジネスプロフィール連携</li>
-          <li>構造化データの設置</li>
-          <li>表示速度・Core Web Vitals改善</li>
+      <div>
+        <p class="footer-sns-title">FOLLOW</p>
+        <ul class="footer-sns-list">
+          <li>
+            <a class="footer-sns-link" href="https://www.instagram.com/takenoshita_no_ojizosan/" target="_blank" rel="noopener noreferrer">
+              <svg class="footer-sns-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              Instagram
+            </a>
+          </li>
+          <li>
+            <a class="footer-sns-link" href="https://www.facebook.com/profile.php?id=100064792773777" target="_blank" rel="noopener noreferrer">
+              <svg class="footer-sns-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+              Facebook
+            </a>
+          </li>
         </ul>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ═══ FAQ ═══ -->
-<section id="faq">
-  <div class="faq-inner">
-    <div class="faq-header fi">
-      <div class="section-tag">FAQ</div>
-      <h2 class="section-title">よくある質問</h2>
-    </div>
-    <div class="fi" style="transition-delay:.05s">
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span>料金はどのくらいかかりますか？</span>
-          <span class="arrow">▼</span>
-        </button>
-        <div class="faq-a">ページ数・機能・デザインの複雑さによって異なりますが、シンプルなコーポレートサイトで15〜20万円程度、保守・運用サポートは月額1〜2万円程度が目安です。まずは無料でお見積もりいたします。</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span>制作期間はどのくらいかかりますか？</span>
-          <span class="arrow">▼</span>
-        </button>
-        <div class="faq-a">シンプルなサイトであれば1〜2週間、ページ数が多い・機能が複雑な場合は1〜2ヶ月程度が目安です。まずデモサイトを無料でご提示しますので、イメージを確認してから進められます。</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span>パソコンに詳しくなくても大丈夫ですか？</span>
-          <span class="arrow">▼</span>
-        </button>
-        <div class="faq-a">もちろんです。専門用語は使わず、LINEやDMでのやり取りにも対応しています。「こんなイメージにしたい」というざっくりした要望でも大丈夫です。丁寧にヒアリングして形にします。</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span>どの地域でも対応できますか？</span>
-          <span class="arrow">▼</span>
-        </button>
-        <div class="faq-a">はい、全国どこでも対応しています。打ち合わせはZoom・電話・DMなどオンラインで完結できます。神奈川県内であれば対面でのご相談も可能です。</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span>依頼する前に仕上がりを確認できますか？</span>
-          <span class="arrow">▼</span>
-        </button>
-        <div class="faq-a">はい、まず無料でデモサイトをお作りします。実際の仕上がりイメージをご確認いただいてから、気に入っていただけた場合のみ正式にご依頼いただく流れです。「見てみたけど違った」でも全く問題ありません。</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span>既存のホームページが古い場合でも対応できますか？</span>
-          <span class="arrow">▼</span>
-        </button>
-        <div class="faq-a">はい、リニューアル・改修も得意としています。現在のサイトの問題点を分析した上で、改善提案をいたします。</div>
-      </div>
+    <div class="footer-bottom">
+      <p class="footer-copy" data-i18n="footer.copy">© 大雄山宝鏡寺 All Rights Reserved.</p>
     </div>
   </div>
-</section>
-
-<!-- ═══ CONTACT ═══ -->
-<section id="contact">
-  <div class="contact-inner fi">
-    <div class="section-tag">Contact</div>
-    <h2 class="section-title">まずは、お気軽にご相談を</h2>
-    <p class="section-sub">
-      「こんなサイトが欲しい」「うちでも作れる？」など、<br>
-      どんな小さな疑問でも歓迎です。<br>
-      無料デモ制作からスタートできます。
-    </p>
-    <div class="contact-cards">
-      <a href="https://www.instagram.com/craft_site_studio/" target="_blank" rel="noopener" class="contact-card">
-        <div class="cc-icon">📸</div>
-        <div class="cc-lbl">Instagram DM</div>
-        <div class="cc-val">@craft_site_studio</div>
-      </a>
-      <a href="mailto:kazurot5632@gmail.com" class="contact-card">
-        <div class="cc-icon">📧</div>
-        <div class="cc-lbl">メール</div>
-        <div class="cc-val">kazurot5632@gmail.com</div>
-      </a>
-    </div>
-    <p class="contact-note">通常1〜2営業日以内にお返事します。お気軽にどうぞ！</p>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer>
-  <div class="f-logo">craft<span>_site_</span>studio</div>
-  <div class="f-copy">© 2026 Kazuki Inoue. All rights reserved.</div>
 </footer>
 
-<script>
-/* ── Mobile menu ──────────────────────────── */
-function toggleMob() {
-  document.getElementById('mobMenu').classList.toggle('open');
-}
-
-/* ── FAQ accordion ────────────────────────── */
-function toggleFaq(btn) {
-  btn.classList.toggle('open');
-  const ans = btn.nextElementSibling;
-  ans.classList.toggle('open');
-}
-
-/* ── Intersection observer ────────────────── */
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fi').forEach(el => io.observe(el));
-</script>
+<script src="js/season.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

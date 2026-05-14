@@ -1,0 +1,141 @@
+/* ===== Footer ===== */
+
+#footer {
+  background: var(--ink);
+  color: var(--text-on-dark);
+  padding: 80px 0 32px;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 64px;
+  margin-bottom: 64px;
+}
+
+/* ── ロゴ・住所エリア ── */
+.footer-brand {}
+
+.footer-logo-text {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--white);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.footer-logo-sub {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.28em;
+  color: var(--gold-light);
+  display: block;
+  margin-bottom: 28px;
+}
+
+.footer-address {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.8rem;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+/* ── サイトリンク ── */
+.footer-nav-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: var(--ls-label);
+  color: var(--gold-light);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-nav-link {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-nav-link:hover { color: var(--gold-light); }
+
+/* ── SNS ── */
+.footer-sns-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: var(--ls-label);
+  color: var(--gold-light);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer-sns-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-sns-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-sns-link:hover { color: var(--gold-light); }
+
+.footer-sns-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* ── コピーライト ── */
+.footer-bottom {
+  border-top: 1px solid var(--border-light);
+  padding-top: 28px;
+  text-align: center;
+}
+
+.footer-copy {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: rgba(245,240,232,0.3);
+}
+
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+  .footer-brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 600px) {
+  #footer { padding: 60px 0 24px; }
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .footer-brand { grid-column: auto; }
+}

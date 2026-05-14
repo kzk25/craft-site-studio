@@ -1,0 +1,183 @@
+/* ===== About Page ===== */
+
+/* ── 概要セクション ── */
+.about-intro {
+  background: var(--washi);
+  padding: var(--section-padding);
+}
+
+.about-intro-body {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.about-intro-text {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.05rem;
+  line-height: 2.3;
+  letter-spacing: 0.06em;
+  color: var(--text-on-light);
+}
+
+/* ── タイムラインセクション ── */
+.timeline-section {
+  background: var(--grad-section-dark);
+  color: var(--text-on-dark);
+  padding: var(--section-padding);
+}
+
+.timeline {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* 縦のゴールドライン */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100px;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+}
+
+.timeline-item {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.timeline-item:last-child { margin-bottom: 0; }
+
+.timeline-year-wrap {
+  flex-shrink: 0;
+  width: 100px;
+  text-align: right;
+  padding-top: 4px;
+}
+
+.timeline-era {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--gold-light);
+  display: block;
+}
+
+.timeline-year {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 2px;
+}
+
+/* タイムラインの点 */
+.timeline-dot {
+  position: absolute;
+  left: 96px;
+  top: 8px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.timeline-content {
+  padding-left: 24px;
+  flex: 1;
+}
+
+.timeline-event {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.timeline-desc {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+}
+
+@media (max-width: 600px) {
+  .timeline::before { left: 72px; }
+  .timeline-year-wrap { width: 72px; }
+  .timeline-dot { left: 68px; }
+  .timeline-item { gap: 24px; }
+  .timeline-content { padding-left: 20px; }
+}
+
+/* ── 境内紹介セクション ── */
+.grounds-section {
+  background: var(--washi-deep);
+  padding: var(--section-padding);
+}
+
+.grounds-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.ground-item {}
+
+.ground-photo {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.ground-photo-bg {
+  width: 100%;
+  height: 100%;
+  background: var(--grad-section-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  transition: transform 0.5s ease;
+}
+
+.ground-item:hover .ground-photo-bg { transform: scale(1.04); }
+
+.ground-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 60%, rgba(26,22,18,0.35) 100%);
+}
+
+.ground-name {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--text-on-light);
+  margin-bottom: 12px;
+}
+
+.ground-desc {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.88rem;
+  line-height: 2;
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .grounds-grid { grid-template-columns: 1fr; }
+}

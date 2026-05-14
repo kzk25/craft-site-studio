@@ -1,0 +1,71 @@
+{
+  "site": {
+    "name": "Daiyuzan Hokyoji",
+    "subtitle": "Takenoshita Jizo-son",
+    "sect": "Soto Zen Buddhism",
+    "address": "1462 Takenoshita, Oyama-cho, Sunto-gun, Shizuoka 410-1313"
+  },
+  "nav": {
+    "about": "About",
+    "honzon": "Main Deity",
+    "events": "Events",
+    "practice": "Zazen",
+    "service": "Ceremonies",
+    "access": "Access"
+  },
+  "hero": {
+    "label": "DAIYUZAN HOKYOJI",
+    "title": "Daiyuzan Hokyoji",
+    "subtitle": "Takenoshita Jizo-son",
+    "badge": "Soto Zen Buddhism | Founded 747 CE",
+    "scroll": "SCROLL"
+  },
+  "about": {
+    "intro": "Daiyuzan Hokyoji is a Soto Zen Buddhist temple founded in 747 CE. Located at the foot of Mt. Fuji and Mt. Kintoki in Oyama-cho, Shizuoka, the temple is beloved by the local community as the 'Takenoshita Jizo-san'. The mountain name 'Daiyuzan' embodies the spirit of Soto Zen, and the temple has continued to receive the prayers of worshippers with Enmei Jizo Bosatsu as its main deity."
+  },
+  "honzon": {
+    "name": "Main Deity: Enmei Jizo Bosatsu (Statue)",
+    "tradition": "Said to be carved by Prince Shotoku (current statue is from the Kamakura period)",
+    "desc": "The Enmei Jizo-son is said to have been carved by Prince Shotoku, and is revered for its many miraculous benefits. Worshippers travel from far and wide for the Hatsu-Jizo and Grand Festival ceremonies. Known affectionately as the 'Takenoshita Jizo-san', it is also recognized today as a sacred power spot.",
+    "data": {
+      "name": "Wooden Enmei Jizo Bosatsu Seated Statue",
+      "era": "Kamakura Period",
+      "designation": "Shizuoka Prefecture Designated Tangible Cultural Property (March 19, 1985)",
+      "secret": "Revealed once every 60 years (next: 2036)",
+      "tradition": "Said to be carved by Prince Shotoku"
+    }
+  },
+  "events": {
+    "hatsujizo": {
+      "date": "Jan 23 (Eve) & 24 (Main) annually",
+      "content": "Daihannya Sutra reading, ancestor memorial service, safety prayer",
+      "comment": "The first Jizo memorial day of the new year. A traditional gathering of devoted worshippers."
+    },
+    "taisai": {
+      "date": "Aug 23 (Eve) & 24 (Main) annually",
+      "content": "Drum memorial, Daihannya prayer, sumo dedication in the temple grounds",
+      "comment": "The summer grand festival, drawing worshippers from far away."
+    },
+    "koyo": {
+      "date": "November (around Labor Thanksgiving Day, Sat–Sun)",
+      "content": "Bamboo lantern illumination and autumn foliage light-up",
+      "cosponsor": "Hokyoji, Takenoshitamiya Shrine, Oyama Tourism Association",
+      "comment": "A magical night as the autumn foliage along the approach is illuminated by handmade bamboo lanterns."
+    }
+  },
+  "practice": {
+    "copy": "Gentle Zazen",
+    "copySub": "Play in zazen, find space in everyday life.",
+    "schedule": "Several times a month (March–December)",
+    "scheduleNote": "Closed in January–February / Schedule announced on Instagram",
+    "dress": "Please wear comfortable clothing (avoid short skirts with exposed legs)",
+    "donation": "Please make a free-will offering (dana) of your choice",
+    "private": "Please send a DM to Hokyoji's Instagram"
+  },
+  "access": {
+    "train": "7-min walk from JR Gotemba Line 'Ashigara Station' (approx. 500–600m)",
+    "trainWarn": "⚠️ NOT the Odakyu Line 'Ashigara Station'",
+    "car": "Approx. 15 min from Gotemba IC on the Tomei Expressway",
+    "parking": "Approx. 5 spaces in the upper temple grounds (free)"
+  }
+}

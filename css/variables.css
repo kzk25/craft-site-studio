@@ -1,0 +1,84 @@
+/* ===== CSS Variables ===== */
+:root {
+  /* ── ベースカラー ── */
+  --ink:         #1a1612;
+  --ink-soft:    #2e2822;
+  --washi:       #f5f0e8;
+  --washi-deep:  #ede5d5;
+  --white:       #fdfaf4;
+
+  /* ── テキスト ── */
+  --text-on-dark:  #f5f0e8;
+  --text-on-light: #1a1612;
+  --text-muted:    rgba(245,240,232,0.65);
+  --text-light:    rgba(26,22,18,0.55);
+
+  /* ── アクセント ── */
+  --gold:        #b8954a;
+  --gold-light:  #d4af6e;
+  --gold-dark:   #8a6e35;
+  --vermillion:  #c0392b;
+
+  /* ── 季節アクセント（JS で上書き）── */
+  --season-accent: #b8954a;
+
+  /* ── グラデーション ── */
+  --grad-hero-default:
+    linear-gradient(
+      170deg,
+      rgba(26,22,18,0.82) 0%,
+      rgba(26,22,18,0.45) 45%,
+      rgba(74,58,35,0.65) 100%
+    );
+  --grad-hero-spring:
+    linear-gradient(170deg, rgba(60,20,20,0.75) 0%, rgba(180,100,100,0.3) 60%, rgba(26,22,18,0.7) 100%);
+  --grad-hero-summer:
+    linear-gradient(170deg, rgba(10,25,15,0.80) 0%, rgba(30,70,40,0.4) 55%, rgba(26,22,18,0.75) 100%);
+  --grad-hero-autumn:
+    linear-gradient(170deg, rgba(40,15,5,0.82) 0%, rgba(140,60,20,0.45) 55%, rgba(26,22,18,0.78) 100%);
+  --grad-hero-winter:
+    linear-gradient(170deg, rgba(10,15,30,0.85) 0%, rgba(40,60,80,0.4) 55%, rgba(26,22,18,0.80) 100%);
+  --grad-section-dark:
+    linear-gradient(135deg, #1a1612 0%, #2a2018 50%, #1a1612 100%);
+  --grad-gold-line:
+    linear-gradient(90deg, transparent, var(--gold), transparent);
+
+  /* ── ボーダー ── */
+  --border-light: rgba(245,240,232,0.15);
+  --border-dark:  rgba(26,22,18,0.15);
+  --border:       rgba(26,22,18,0.12);
+
+  /* ── フォントサイズ ── */
+  --fs-hero:  clamp(2.6rem, 6vw, 4.8rem);
+  --fs-h1:    clamp(1.8rem, 3.5vw, 2.6rem);
+  --fs-h2:    clamp(1.4rem, 2.5vw, 1.9rem);
+  --fs-h3:    1.2rem;
+  --fs-body:  1rem;
+  --fs-small: 0.875rem;
+  --fs-label: 0.75rem;
+
+  /* ── 行間・字間 ── */
+  --lh-heading: 1.5;
+  --lh-body:    2.1;
+  --ls-heading: 0.12em;
+  --ls-body:    0.06em;
+  --ls-label:   0.35em;
+
+  /* ── スペーシング ── */
+  --section-padding: 120px 0;
+  --container-max:   960px;
+  --container-pad:   0 40px;
+  --gap-grid:        48px;
+
+  /* ── トランジション ── */
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.6s ease;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 72px 0;
+    --container-pad:   0 20px;
+    --gap-grid:        28px;
+  }
+}

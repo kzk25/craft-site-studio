@@ -1,0 +1,396 @@
+/* ===== Base Styles ===== */
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  letter-spacing: var(--ls-body);
+  color: var(--text-on-light);
+  background: var(--washi);
+}
+
+/* ── コンテナ ── */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--container-pad);
+}
+
+.container-wide {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--container-pad);
+}
+
+/* ── セクション共通 ── */
+.section {
+  padding: var(--section-padding);
+}
+
+.section-dark {
+  background: var(--grad-section-dark);
+  color: var(--text-on-dark);
+}
+
+.section-washi {
+  background: var(--washi);
+  color: var(--text-on-light);
+}
+
+.section-washi-deep {
+  background: var(--washi-deep);
+  color: var(--text-on-light);
+}
+
+/* ── セクションヘッダー ── */
+.section-label {
+  display: block;
+  font-family: 'Noto Serif JP', serif;
+  font-size: var(--fs-label);
+  font-weight: 300;
+  letter-spacing: var(--ls-label);
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: var(--fs-h2);
+  font-weight: 500;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-heading);
+}
+
+.section-title-wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 48px;
+}
+
+.section-title-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--gold);
+  transition: width 0.8s ease 0.3s;
+}
+
+.section-title-wrap.visible::after {
+  width: 48px;
+}
+
+.section-header {
+  margin-bottom: 64px;
+}
+
+/* ── 金のセパレーター ── */
+.gold-separator {
+  width: 100%;
+  height: 1px;
+  background: var(--grad-gold-line);
+}
+
+/* ── タイポグラフィ ── */
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+
+.serif { font-family: 'Noto Serif JP', serif; }
+.shippori { font-family: 'Shippori Mincho B1', serif; }
+.sans { font-family: 'Noto Sans JP', sans-serif; }
+
+/* ── ボタン ── */
+.btn-primary {
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 14px 44px;
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.btn-primary:hover { color: var(--ink); }
+.btn-primary:hover::before { transform: scaleX(1); }
+
+.btn-outline {
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  padding: 14px 44px;
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s;
+  display: inline-block;
+}
+
+.btn-outline::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.btn-outline:hover { color: var(--washi); }
+.btn-outline:hover::before { transform: scaleX(1); }
+
+/* テキストリンク（矢印アニメーション）*/
+.link-arrow {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.85rem;
+  color: var(--gold-light);
+  letter-spacing: 0.1em;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: gap 0.3s, color 0.2s;
+}
+
+.link-arrow::after { content: '→'; transition: transform 0.3s; }
+.link-arrow:hover { gap: 16px; color: var(--gold); }
+.link-arrow:hover::after { transform: translateX(4px); }
+
+/* ── アニメーションクラス ── */
+.anim-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.anim-fade-up.visible { opacity: 1; transform: translateY(0); }
+
+.anim-slide-left {
+  opacity: 0;
+  transform: translateX(-48px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.anim-slide-left.visible { opacity: 1; transform: translateX(0); }
+
+.anim-slide-right {
+  opacity: 0;
+  transform: translateX(48px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.anim-slide-right.visible { opacity: 1; transform: translateX(0); }
+
+.anim-scale-in {
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.anim-scale-in.visible { opacity: 1; transform: scale(1); }
+
+/* 遅延クラス */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+
+/* テキスト1文字ずつ出現 */
+.char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.char.visible { opacity: 1; transform: translateY(0); }
+
+/* ── ページヒーロー（サブページ共通）── */
+.page-hero {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--grad-section-dark);
+}
+
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.05);
+  animation: pageHeroZoom 8s ease-out forwards;
+}
+
+@keyframes pageHeroZoom {
+  from { transform: scale(1.05); }
+  to   { transform: scale(1.0); }
+}
+
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    170deg,
+    rgba(26,22,18,0.75) 0%,
+    rgba(26,22,18,0.4) 50%,
+    rgba(26,22,18,0.7) 100%
+  );
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--text-on-dark);
+}
+
+.page-hero-label {
+  display: block;
+  font-family: 'Noto Serif JP', serif;
+  font-size: var(--fs-label);
+  font-weight: 300;
+  letter-spacing: var(--ls-label);
+  color: var(--gold-light);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.page-hero-title {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: var(--fs-h1);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--white);
+}
+
+/* ── 強調テキスト ── */
+.text-vermillion { color: var(--vermillion); font-weight: 500; }
+.text-gold { color: var(--gold); }
+.text-muted-dark { color: var(--text-muted); }
+
+/* ── 2列グリッド ── */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-grid);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 900px) {
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .grid-3 { grid-template-columns: 1fr; }
+  .page-hero { height: 280px; }
+}
+
+/* ── テーブル ── */
+.info-table {
+  width: 100%;
+  border-top: 1px solid var(--border);
+}
+
+.info-table tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.info-table th,
+.info-table td {
+  padding: 18px 0;
+  font-size: var(--fs-small);
+  text-align: left;
+  vertical-align: top;
+}
+
+.info-table th {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  width: 160px;
+  color: var(--gold);
+}
+
+.info-table-dark {
+  border-top: 1px solid var(--border-light);
+}
+.info-table-dark tr { border-bottom: 1px solid var(--border-light); }
+.info-table-dark th { color: var(--gold-light); }
+.info-table-dark th,
+.info-table-dark td { color: var(--text-on-dark); }
+
+/* ── ご利益グリッド ── */
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.benefit-item {
+  text-align: center;
+  padding: 24px 16px;
+  border: 1px solid var(--border-dark);
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.benefit-item:hover {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+}
+
+.benefit-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.benefit-name {
+  font-family: 'Noto Serif JP', serif;
+  font-size: var(--fs-small);
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px) {
+  .benefit-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── 写真プレースホルダー ── */
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  background: var(--grad-section-dark);
+  color: rgba(245,240,232,0.3);
+}

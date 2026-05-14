@@ -1,0 +1,664 @@
+/* ===== Home Page ===== */
+
+/* ── Hero ── */
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 120px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* フォールバック：写真がない場合のグラデーション */
+  background-image: linear-gradient(160deg, #1a1612 0%, #2e2010 35%, #1a1612 70%, #0f0e0c 100%);
+  animation: heroZoom 14s ease-out forwards;
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1.08); }
+  to   { transform: scale(1.0); }
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--grad-hero-default);
+  z-index: 1;
+}
+
+.hero-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* 家紋風装飾（写真なし時の背景装飾）*/
+.hero-kamon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(400px, 60vw);
+  height: min(400px, 60vw);
+  opacity: 0.04;
+  z-index: 1;
+}
+
+.hero-particle-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  padding: 0 60px;
+  max-width: 700px;
+}
+
+.hero-label {
+  display: block;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.5em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease 0.3s forwards;
+}
+
+/* ゴールドラインが左→右へ伸びる */
+.hero-line {
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  margin-bottom: 32px;
+  animation: lineGrow 1.2s ease 0.8s forwards;
+}
+
+@keyframes lineGrow {
+  to { width: 80px; }
+}
+
+.hero-title {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: var(--fs-hero);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.2em;
+  line-height: 1.25;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.hero-subtitle {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 300;
+  color: rgba(245,240,232,0.75);
+  letter-spacing: 0.25em;
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease 1.6s forwards;
+}
+
+.hero-badge {
+  display: inline-block;
+  border: 1px solid rgba(184,149,74,0.6);
+  padding: 8px 20px;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  color: var(--gold-light);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease 2.0s forwards;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── スクロールインジケーター ── */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: rgba(245,240,232,0.4);
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.62rem;
+  letter-spacing: var(--ls-label);
+  z-index: 3;
+  opacity: 0;
+  animation: fadeInUp 1s ease 2.5s forwards;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 60px;
+  background: rgba(245,240,232,0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-line::after {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, var(--gold-light), transparent);
+  animation: scrollLight 2s ease-in-out 2.5s infinite;
+}
+
+@keyframes scrollLight {
+  0%   { top: -60px; opacity: 1; }
+  100% { top: 60px;  opacity: 0; }
+}
+
+/* ── インフォバー ── */
+.info-bar {
+  background: var(--ink-soft);
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.info-bar::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--grad-gold-line);
+}
+
+.info-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.info-bar-item {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-bar-item .label {
+  color: var(--gold-light);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+}
+
+.info-bar-divider {
+  color: rgba(245,240,232,0.2);
+  font-size: 0.8rem;
+}
+
+/* ── 宝鏡寺についてセクション ── */
+.about-section {
+  background: var(--washi);
+  padding: var(--section-padding);
+}
+
+.about-photo-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 21/9;
+  overflow: hidden;
+  margin-bottom: 72px;
+}
+
+.about-photo-bg {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #2a2018 0%, #1a1612 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  color: rgba(245,240,232,0.08);
+  font-family: 'Shippori Mincho B1', serif;
+  letter-spacing: 0.5em;
+}
+
+.about-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26,22,18,0.5) 0%,
+    transparent 30%,
+    transparent 70%,
+    rgba(26,22,18,0.7) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-photo-caption {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.3em;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+
+.about-text-block {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-lead {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-weight: 400;
+  line-height: 2.2;
+  letter-spacing: 0.08em;
+  color: var(--text-on-light);
+}
+
+/* ── 御本尊セクション ── */
+.honzon-section {
+  background: var(--grad-section-dark);
+  color: var(--text-on-dark);
+  padding: var(--section-padding);
+  position: relative;
+  overflow: hidden;
+}
+
+.honzon-bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: min(280px, 30vw);
+  font-weight: 800;
+  color: rgba(245,240,232,0.03);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: 0.1em;
+}
+
+.honzon-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-grid);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.honzon-photo-wrap {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  max-height: 500px;
+}
+
+.honzon-photo-bg {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #2a2018 0%, #1a1612 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+}
+
+.honzon-photo-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 60%, rgba(26,22,18,0.5) 100%);
+}
+
+.honzon-text {}
+
+.honzon-title-main {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.honzon-title-sub {
+  font-family: 'Noto Serif JP', serif;
+  font-size: var(--fs-small);
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  color: var(--gold-light);
+  margin-bottom: 32px;
+}
+
+.honzon-desc {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.9rem;
+  line-height: 2.2;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 36px;
+}
+
+@media (max-width: 768px) {
+  .honzon-inner { grid-template-columns: 1fr; }
+  .honzon-photo-wrap { max-height: 300px; aspect-ratio: 4/3; }
+}
+
+/* ── 年間行事セクション ── */
+.events-section {
+  background: var(--washi-deep);
+  padding: var(--section-padding);
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.event-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--ink);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.25);
+}
+
+.event-card-img-wrap {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+
+.event-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.event-card:hover .event-card-img { transform: scale(1.06); }
+
+.event-card-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #2a2018 0%, #1a1612 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  transition: transform 0.6s ease;
+}
+
+.event-card:hover .event-card-placeholder { transform: scale(1.06); }
+
+.event-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26,22,18,0.85) 0%, rgba(26,22,18,0.2) 40%, transparent 60%);
+  transition: background 0.4s ease;
+}
+
+.event-card:hover .event-card-overlay {
+  background: linear-gradient(to top, rgba(26,22,18,0.9) 0%, rgba(26,22,18,0.35) 55%, rgba(26,22,18,0.1) 100%);
+}
+
+.event-card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px 24px;
+  z-index: 2;
+}
+
+.event-card-date {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  color: var(--gold-light);
+  margin-bottom: 8px;
+}
+
+.event-card-name {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.event-card-desc {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: rgba(245,240,232,0.65);
+}
+
+@media (max-width: 900px) {
+  .events-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .events-grid { grid-template-columns: 1fr; }
+}
+
+/* ── 参禅セクション ── */
+.zazen-section {
+  position: relative;
+  padding: var(--section-padding);
+  background: var(--ink);
+  overflow: hidden;
+}
+
+.zazen-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, #1a1612 0%, #2e2010 50%, #1a1612 100%);
+  z-index: 0;
+}
+
+.zazen-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--text-on-dark);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.zazen-quote {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  line-height: 1.8;
+  color: var(--white);
+  margin-bottom: 40px;
+}
+
+.zazen-desc {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.9rem;
+  line-height: 2.2;
+  color: var(--text-muted);
+  margin-bottom: 48px;
+}
+
+/* ── NEWSセクション ── */
+.news-section {
+  background: var(--washi);
+  padding: var(--section-padding);
+}
+
+.news-header {
+  margin-bottom: 40px;
+}
+
+.news-list {
+  border-top: 1px solid var(--border);
+  margin-bottom: 40px;
+}
+
+.news-item {
+  display: flex;
+  align-items: baseline;
+  gap: 32px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.news-date {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--text-light);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  min-width: 88px;
+}
+
+.news-title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: var(--text-on-light);
+  transition: color 0.2s;
+}
+
+.news-title:hover { color: var(--gold); }
+
+@media (max-width: 600px) {
+  .news-item { flex-direction: column; gap: 4px; }
+
+  .hero-content { padding: 0 24px; }
+
+  .about-photo-wrap { aspect-ratio: 16/9; }
+}
+
+/* ── ホームアクセスセクション ── */
+.home-access-section {
+  background: var(--washi);
+  padding: 0 0 var(--section-padding);
+}
+
+.home-map-wrap {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.home-map-wrap::before {
+  content: '';
+  display: block;
+  height: 4px;
+  background: var(--grad-gold-line);
+}
+
+.home-map-wrap iframe {
+  display: block;
+  width: 100%;
+  height: 450px;
+  border: 0;
+  filter: grayscale(15%);
+}
+
+.home-access-info {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.home-access-name {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin-bottom: 8px;
+  color: var(--text-on-light);
+}
+
+.home-access-addr {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  letter-spacing: 0.08em;
+  margin-bottom: 28px;
+}
+
+.home-access-items {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.home-access-item {
+  text-align: center;
+}
+
+.home-access-item-label {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.home-access-item-value {
+  font-size: 0.9rem;
+  color: var(--text-on-light);
+  letter-spacing: 0.05em;
+}
+
+.access-warn {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--vermillion);
+  margin-top: 6px;
+}
