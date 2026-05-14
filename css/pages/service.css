@@ -1,0 +1,130 @@
+/* ===== Service Page ===== */
+
+/* ── 御供養セクション ── */
+.kuyo-section {
+  background: var(--washi);
+  padding: var(--section-padding);
+}
+
+.kuyo-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.kuyo-card {
+  border: 1px solid var(--border-dark);
+  padding: 40px 28px;
+  text-align: center;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.kuyo-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+}
+
+.kuyo-card-icon {
+  font-size: 2.4rem;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.kuyo-card-name {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--text-on-light);
+  margin-bottom: 12px;
+}
+
+.kuyo-card-note {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.82rem;
+  color: var(--text-light);
+  letter-spacing: 0.04em;
+}
+
+.kuyo-notice {
+  padding: 20px 24px;
+  border: 1px solid rgba(192,57,43,0.3);
+  background: rgba(192,57,43,0.04);
+}
+
+.kuyo-notice-text {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.88rem;
+  color: var(--vermillion);
+  letter-spacing: 0.04em;
+}
+
+/* ── 御祈祷セクション ── */
+.kito-section {
+  background: var(--grad-section-dark);
+  color: var(--text-on-dark);
+  padding: var(--section-padding);
+}
+
+.kito-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--border-light);
+  border: 1px solid var(--border-light);
+  margin-bottom: 40px;
+}
+
+.kito-item {
+  background: rgba(26,22,18,0.85);
+  padding: 40px 24px;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.kito-item:hover { background: rgba(46,40,34,0.9); }
+
+.kito-price {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.kito-price-label {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.kito-type {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--white);
+}
+
+.kito-note {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+/* ── ご利益セクション ── */
+.service-benefit-section {
+  background: var(--washi-deep);
+  padding: var(--section-padding);
+}
+
+@media (max-width: 768px) {
+  .kuyo-cards { grid-template-columns: 1fr; }
+  .kito-grid { grid-template-columns: 1fr; }
+}

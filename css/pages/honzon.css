@@ -1,0 +1,129 @@
+/* ===== Honzon Page ===== */
+
+/* ── 御本尊メインセクション ── */
+.honzon-main {
+  background: var(--washi);
+  padding: var(--section-padding);
+}
+
+.honzon-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.honzon-page-photo {
+  position: relative;
+  overflow: hidden;
+}
+
+.honzon-page-photo-bg {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: var(--grad-section-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+}
+
+.honzon-page-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 60%, rgba(26,22,18,0.3) 100%);
+}
+
+.honzon-page-text {}
+
+.honzon-page-name {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--text-on-light);
+  margin-bottom: 8px;
+}
+
+.honzon-page-tradition {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-bottom: 40px;
+}
+
+.honzon-page-desc {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.95rem;
+  line-height: 2.3;
+  letter-spacing: 0.04em;
+  color: var(--text-on-light);
+  margin-bottom: 48px;
+}
+
+/* ── データカードテーブル ── */
+.honzon-data-section {
+  background: var(--grad-section-dark);
+  color: var(--text-on-dark);
+  padding: var(--section-padding);
+}
+
+.honzon-data-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--border-light);
+  border: 1px solid var(--border-light);
+}
+
+.honzon-data-item {
+  background: rgba(26,22,18,0.8);
+  padding: 36px 28px;
+  text-align: center;
+}
+
+.honzon-data-label {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.68rem;
+  font-weight: 300;
+  letter-spacing: var(--ls-label);
+  color: var(--gold-light);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.honzon-data-value {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--white);
+  line-height: 1.7;
+}
+
+/* ── ご利益セクション ── */
+.benefit-section {
+  background: var(--washi-deep);
+  padding: var(--section-padding);
+}
+
+.benefit-section .benefit-item {
+  border-color: var(--border-dark);
+}
+
+.benefit-section .benefit-name {
+  color: var(--text-on-light);
+}
+
+@media (max-width: 900px) {
+  .honzon-layout { grid-template-columns: 1fr; gap: 48px; }
+  .honzon-data-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .honzon-data-grid { grid-template-columns: 1fr; }
+}

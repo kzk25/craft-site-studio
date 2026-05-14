@@ -1,0 +1,22 @@
+/* ===== Season Theme Overrides ===== */
+
+/* 春：桜の淡いアクセント */
+[data-season="spring"] .section-label,
+[data-season="spring"] .page-hero-label { color: var(--season-accent); }
+[data-season="spring"] .section-title-wrap::after { background: var(--season-accent); }
+[data-season="spring"] .gold-separator { background: linear-gradient(90deg, transparent, var(--season-accent), transparent); }
+
+/* 夏：深緑の落ち着き */
+[data-season="summer"] .section-label,
+[data-season="summer"] .page-hero-label { color: var(--season-accent); }
+[data-season="summer"] .section-title-wrap::after { background: var(--season-accent); }
+
+/* 秋：紅葉色 */
+[data-season="autumn"] .section-label,
+[data-season="autumn"] .page-hero-label { color: var(--season-accent); }
+[data-season="autumn"] .section-title-wrap::after { background: var(--season-accent); }
+
+/* 冬：冬空の静寂 */
+[data-season="winter"] .section-label,
+[data-season="winter"] .page-hero-label { color: var(--season-accent); }
+[data-season="winter"] .section-title-wrap::after { background: var(--season-accent); }
